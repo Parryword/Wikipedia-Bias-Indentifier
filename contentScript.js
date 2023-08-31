@@ -197,6 +197,10 @@ var sources = {
     }
 }
 
+var count_left = 0;
+var count_center = 0;
+var count_right = 0;
+var article_name = document.getElementsByClassName("mw-page-title-main")[0].textContent;
 
 function handleResponse(message) {
     console.log(`Message from the background script: ${message.response}`);
@@ -209,21 +213,24 @@ function handleError(error) {
 function notifyBackgroundPage() {
     const sending = browser.runtime.sendMessage({
         greeting: "Greeting from the content script",
+        data: { title: article_name.toString(), left: count_left.toString(), center: count_center.toString(), right: count_right.toString() }
     });
     sending.then(handleResponse, handleError);
 }
 
-window.addEventListener("click", notifyBackgroundPage);
+window.addEventListener("mousemove", notifyBackgroundPage);
+
+// ==========MAIN APPLICATIOIN LOGIC=================
 
 // Get all the citations
 console.log("Getting list of references...");
-const collection = document.getElementsByClassName("reference");
+let collection = document.getElementsByClassName("reference");
 console.log(collection);
 
-const references = new Array();
 
-prepare_references();
-// Check every source
+const references = prepare_references(collection);
+
+// Check bias for every consecutive citation group
 for (let i = 0; i < references.length; i++) {
     try {
         evaluate_group(i);
@@ -232,15 +239,21 @@ for (let i = 0; i < references.length; i++) {
         console.log(err);
     }
 }
+console.log(`Left: ${count_left} Center: ${count_center} Right: ${count_right}`);
+notifyBackgroundPage();
 
-function prepare_references() {
+// =========== END MAIN APPLICATION LOGIC ==================
+
+/** 
+ * Group consecutive citations in subarray
+ */
+function prepare_references(collection) {
+    const reference_array = new Array();
     var j = 0;
-    references[j] = new Array();
+    reference_array[j] = new Array();
     for (let i = 0; i < collection.length; i++) {
-
         var prompt = i + " " + collection[i].childNodes[0].getAttribute("href") + " " + collection[i].nodeName;
-
-        references[j].push(collection[i]);
+        reference_array[j].push(collection[i]);
         
         if (collection[i].nextSibling !== null) {
             prompt = prompt + ", next: " + collection[i].nextSibling.nodeName;
@@ -250,14 +263,13 @@ function prepare_references() {
 
         if (collection[i].nextSibling == null || collection[i].nextSibling.nodeName !== "SUP") {
             j++;
-            references[j] = new Array();
+            reference_array[j] = new Array();
         }
 
         console.log(prompt);
-
     }
-
-    console.log("Reference array", references);
+    console.log("Reference array", reference_array);
+    return reference_array;
 }
 
 function evaluate_group(index) {
@@ -302,12 +314,15 @@ function evaluate_group(index) {
                     let bias = sources[source].bias;
                     if (bias === "center" && bias_score == null) {
                         bias_score = 0;
+                        count_center++;
                     }
                     if (bias === "left") {
                         bias_score--;
+                        count_left++;
                     } 
                     if (bias === "right") {
                         bias_score++;
+                        count_right++;
                     }
                     break;
 

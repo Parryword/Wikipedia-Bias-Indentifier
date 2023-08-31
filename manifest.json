@@ -8,11 +8,20 @@
   "icons": {
     "48": "icons/image.svg"
   },
-
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
   "content_scripts": [
     {
       "matches": ["*://*.wikipedia.org/wiki/*"],
-      "js": ["bias.js"]
+      "js": ["contentScript.js"]
     }
   ]
 
