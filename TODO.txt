@@ -1,0 +1,2 @@
+Extension fails if the title is italicized. 
+Show the number of failed evaluations in popup.
