@@ -218,7 +218,9 @@ function notifyBackgroundPage() {
     sending.then(handleResponse, handleError);
 }
 
-window.addEventListener("mousemove", notifyBackgroundPage);
+// window.addEventListener("mousemove", notifyBackgroundPage);
+browser.runtime.onMessage.addListener(notifyBackgroundPage);
+
 
 // ==========MAIN APPLICATIOIN LOGIC=================
 

@@ -19,3 +19,9 @@ browser.runtime.onMessage.addListener(handleMessage);
 function getData() {
     return { "title": _title, "left": _left.toString(), "center": _center.toString(), "right": _right.toString() };
 }
+
+browser.tabs.onActivated.addListener(handleChange);
+
+function handleChange(activeInfo) {
+    browser.tabs.sendMessage(activeInfo.tabId, "activate");
+}
