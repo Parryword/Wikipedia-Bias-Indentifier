@@ -1,2 +1,4 @@
-Extension fails if the title is italicized. 
-Show the number of failed evaluations in popup.
+I. Extension fails if the title is italicized. 
+II. Show the number of failed evaluations in popup.
+III. Add options center-left and center-right bias
+VI. Rework/improve tab change detection
