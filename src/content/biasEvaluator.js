@@ -1,4 +1,4 @@
-import { sources } from "./sources.js";
+import sources from "./sources.js";
 import { colorizeCitation } from "./domService.js";
 
 export class BiasEvaluator {

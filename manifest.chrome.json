@@ -4,13 +4,13 @@
   "version": "0.1",
   "description": "Identify biased sources on Wikipedia.",
   "icons": {
-    "48": "src/icons/image.svg"
+    "48": "icons/image.svg"
   },
   "action": {
-    "default_popup": "src/popup/popup.html"
+    "default_popup": "popup/popup.html"
   },
   "background": {
-    "service_worker": "src/background/background.js"
+    "service_worker": "background/background.js"
   },
   "permissions": [
     "tabs",
@@ -19,7 +19,7 @@
   "content_scripts": [
     {
       "matches": ["*://*.wikipedia.org/wiki/*"],
-      "js": ["src/content/contentScript.js"]
+      "js": ["content/contentScript.js"]
     }
   ]
 }

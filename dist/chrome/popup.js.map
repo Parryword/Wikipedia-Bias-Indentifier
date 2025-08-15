@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/shared/browserAPI.js", "../../src/popup/popup.js"],
+  "sourcesContent": ["const browserAPI = typeof browser !== \"undefined\" ? browser : chrome;\n\nexport default browserAPI;\n", "import browserAPI from '../shared/browserAPI.js';\n\nlet backgroundPage = browserAPI.extension.getBackgroundPage();\n\nfunction updateUI() {\n    const data = backgroundPage.getData();\n    document.getElementById(\"left\").innerText = data['left'];\n    document.getElementById(\"center\").innerText = data['center'];\n    document.getElementById(\"right\").innerText = data['right'];\n    document.getElementById(\"title\").innerText = data['title'];\n}    \n\ndocument.addEventListener('DOMContentLoaded', updateUI);\n\n\n\n"],
+  "mappings": ";;AAAA,MAAM,aAAa,OAAO,YAAY,cAAc,UAAU;AAE9D,MAAO,qBAAQ;;;ACAf,MAAI,iBAAiB,mBAAW,UAAU,kBAAkB;AAE5D,WAAS,WAAW;AAChB,UAAM,OAAO,eAAe,QAAQ;AACpC,aAAS,eAAe,MAAM,EAAE,YAAY,KAAK,MAAM;AACvD,aAAS,eAAe,QAAQ,EAAE,YAAY,KAAK,QAAQ;AAC3D,aAAS,eAAe,OAAO,EAAE,YAAY,KAAK,OAAO;AACzD,aAAS,eAAe,OAAO,EAAE,YAAY,KAAK,OAAO;AAAA,EAC7D;AAEA,WAAS,iBAAiB,oBAAoB,QAAQ;",
+  "names": []
+}

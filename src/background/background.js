@@ -1,4 +1,4 @@
-import browserAPI from './shared/browserAPI.js';
+import browserAPI from "../shared/browserAPI";
 
 const state = {
     title: "UNDEFINED",

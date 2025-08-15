@@ -135,10 +135,6 @@ var sources = {
         url: "thedailybeast.com",
         bias: "left"
     },
-    "Politico": {
-        url: "politico.com",
-        bias: "left"
-    },
     "National Public Radio": {
         url: "npr.org",
         bias: "left"
