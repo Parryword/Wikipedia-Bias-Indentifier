@@ -3,14 +3,16 @@ import browserAPI from "../shared/browserAPI";
 const state = {
     title: "UNDEFINED",
     left: -1,
+    centerLeft: -1,
     center: -1,
+    centerRight: -1,
     right: -1
 };
 
 function handleMessage(request, sender, sendResponse) {
     if (request.data) {
-        const { title, left, center, right } = request.data;
-        Object.assign(state, { title, left, center, right });
+        const { title, left, centerLeft, center, centerRight, right } = request.data;
+        Object.assign(state, { title, left, centerLeft, center, centerRight, right });
     }
 
     console.log(`Received message: ${request.greeting || 'No greeting'}`);
@@ -30,7 +32,9 @@ function getData() {
     return {
         title: state.title,
         left: String(state.left),
+        centerLeft: String(state.centerLeft),
         center: String(state.center),
+        centerRight: String(state.centerRight),
         right: String(state.right)
     };
 }

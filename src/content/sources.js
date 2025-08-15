@@ -1,4 +1,12 @@
 var sources = {
+    // Allmost all ratings are from AllSides.
+    // Center-left & center-right media are
+    // listed as "center" in low confidence
+    // cases for the benefit of the doubt.
+
+    // Some British media ratings are from
+    // "How Press Propaganda Paved the Way for Brexit" p. 65
+
     "BBC": {
         url: "bbc.com",
         bias: "center"
@@ -71,41 +79,53 @@ var sources = {
         url: "apnews.com",
         bias: "center"
     },
-    "Vanity Fair": {
-        url: "vanityfair.com",
+    "The Conversation": {
+        url: "theconversation.com",
+            bias: "center"
+    },
+    "The Week": {
+        url: "theweek.com",
         bias: "center"
     },
     "Forbes": {
         url: "forbes.com",
         bias: "center"
     },
-    "The Conversation": {
-        url: "theconversation.com",
+    "Wall Street Journal": {
+        url: "wsj.com",
         bias: "center"
     },
-    "The Week": {
-        url: "theweek.com",
-        bias: "center"
+    "Vanity Fair": {
+        url: "vanityfair.com",
+        bias: "center left"
     },
     "New York Times": {
         url: "nytimes.com",
-        bias: "left"
+        bias: "center left"
     },
     "Washington Post": {
         url: "washingtonpost.com",
-        bias: "left"
+        bias: "center left"
     },
     "CNN": {
         url: "cnn.com",
-        bias: "left"
+        bias: "center left"
     },
     "The Guardian": {
         url: "theguardian.com",
-        bias: "left"
+        bias: "center left"
+    },
+    "The Independent": {
+        url: "independent.co.uk",
+        bias: "center left"
     },
     "Politico": {
         url: "politico.com",
-        bias: "left"
+        bias: "center left"
+    },
+    "National Public Radio": {
+        url: "npr.org",
+        bias: "center left"
     },
     "Huffington Post": {
         url: "huffpost.com",
@@ -119,10 +139,6 @@ var sources = {
         url: "theatlantic.com",
         bias: "left"
     },
-    "The Independent": {
-        url: "independent.co.uk",
-        bias: "left"
-    },
     "Slate": {
         url: "slate.com",
         bias: "left"
@@ -133,10 +149,6 @@ var sources = {
     },
     "Daily Beast": {
         url: "thedailybeast.com",
-        bias: "left"
-    },
-    "National Public Radio": {
-        url: "npr.org",
         bias: "left"
     },
     "New York Magazine": {
@@ -155,17 +167,21 @@ var sources = {
         url: "buzzfeednews.com",
         bias: "left"
     },
-    "The Sun": {
-        url: "thesun.co.uk",
-        bias: "right"
-    },
     "Fox News": {
         url: "foxnews.com",
-        bias: "right"
+        bias: "center right"
     },
     "New York Post": {
         url: "nypost.com",
-        bias: "right"
+        bias: "center right"
+    },
+    "Washington Times": {
+        url: "washingtontimes.com",
+        bias: "center right"
+    },
+    "The Sun": {
+        url: "thesun.co.uk",
+        bias: "center right"
     },
     "Daily Wire": {
         url: "dailywire.com",
@@ -179,18 +195,8 @@ var sources = {
         url: "reason.com",
         bias: "right"
     },
-    "Wall Street Journal": {
-        url: "wsj.com",
-        bias: "right"
-    },
-    "Washington Times": {
-        url: "washingtontimes.com",
-        bias: "right"
-    },
     "National Review": {
         url: "nationalreview.com",
         bias: "right"
     }
 }
-
-export default sources;

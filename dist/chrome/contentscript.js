@@ -1,4 +1,36 @@
 (() => {
+  var __create = Object.create;
+  var __defProp = Object.defineProperty;
+  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __getProtoOf = Object.getPrototypeOf;
+  var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __commonJS = (cb, mod) => function __require() {
+    return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+  };
+  var __copyProps = (to, from, except, desc) => {
+    if (from && typeof from === "object" || typeof from === "function") {
+      for (let key of __getOwnPropNames(from))
+        if (!__hasOwnProp.call(to, key) && key !== except)
+          __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+    }
+    return to;
+  };
+  var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+    // If the importer is in node compatibility mode or this is not an ESM
+    // file that has been converted to a CommonJS file using a Babel-
+    // compatible transform (i.e. "__esModule" has not been set), then set
+    // "default" to the CommonJS "module.exports" for node compatibility.
+    isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+    mod
+  ));
+
+  // src/content/sources.js
+  var require_sources = __commonJS({
+    "src/content/sources.js"() {
+    }
+  });
+
   // src/content/domService.js
   function getArticleTitle() {
     const el = document.getElementById("firstHeading").firstChild.textContent;
@@ -32,208 +64,14 @@
     }
   }
 
-  // src/content/sources.js
-  var sources = {
-    "BBC": {
-      url: "bbc.com",
-      bias: "center"
-    },
-    "Reuters": {
-      url: "reuters.com",
-      bias: "center"
-    },
-    "Time": {
-      url: "time.com",
-      bias: "center"
-    },
-    "Public Broadcast Service": {
-      url: "pbs.org",
-      bias: "center"
-    },
-    "NBC News": {
-      url: "nbcnews.com",
-      bias: "center"
-    },
-    "CNBC News": {
-      url: "cnbcnews.com",
-      bias: "center"
-    },
-    "CNBC": {
-      url: "cnbc.com",
-      bias: "center"
-    },
-    "ABC News": {
-      url: "abcnews.go.com",
-      bias: "center"
-    },
-    "Foreign Policy": {
-      url: "foreignpolicy.com",
-      bias: "center"
-    },
-    "USA Today": {
-      url: "usatoday.com",
-      bias: "center"
-    },
-    "CBS News": {
-      url: "cbsnews.com",
-      bias: "center"
-    },
-    "The Hill": {
-      url: "thehill.com",
-      bias: "center"
-    },
-    "Financial Times": {
-      url: "ft.com",
-      bias: "center"
-    },
-    "Bussiness Insider": {
-      url: "businessinsider.com",
-      bias: "center"
-    },
-    "Bloomberg": {
-      url: "bloomberg.com",
-      bias: "center"
-    },
-    "Los Angeles Times": {
-      url: "latimes.com",
-      bias: "center"
-    },
-    "Wired": {
-      url: "wired.com",
-      bias: "center"
-    },
-    "Associated Press": {
-      url: "apnews.com",
-      bias: "center"
-    },
-    "Vanity Fair": {
-      url: "vanityfair.com",
-      bias: "center"
-    },
-    "Forbes": {
-      url: "forbes.com",
-      bias: "center"
-    },
-    "The Conversation": {
-      url: "theconversation.com",
-      bias: "center"
-    },
-    "The Week": {
-      url: "theweek.com",
-      bias: "center"
-    },
-    "New York Times": {
-      url: "nytimes.com",
-      bias: "left"
-    },
-    "Washington Post": {
-      url: "washingtonpost.com",
-      bias: "left"
-    },
-    "CNN": {
-      url: "cnn.com",
-      bias: "left"
-    },
-    "The Guardian": {
-      url: "theguardian.com",
-      bias: "left"
-    },
-    "Politico": {
-      url: "politico.com",
-      bias: "left"
-    },
-    "Huffington Post": {
-      url: "huffpost.com",
-      bias: "left"
-    },
-    "Vox": {
-      url: "vox.com",
-      bias: "left"
-    },
-    "The Atlantic": {
-      url: "theatlantic.com",
-      bias: "left"
-    },
-    "The Independent": {
-      url: "independent.co.uk",
-      bias: "left"
-    },
-    "Slate": {
-      url: "slate.com",
-      bias: "left"
-    },
-    "The New Yorker": {
-      url: "newyorker.com",
-      bias: "left"
-    },
-    "Daily Beast": {
-      url: "thedailybeast.com",
-      bias: "left"
-    },
-    "National Public Radio": {
-      url: "npr.org",
-      bias: "left"
-    },
-    "New York Magazine": {
-      url: "nymag.com",
-      bias: "left"
-    },
-    "Vice News": {
-      url: "vice.com",
-      bias: "left"
-    },
-    "MSNBC": {
-      url: "msnbc.com",
-      bias: "left"
-    },
-    "BuzzFeed News": {
-      url: "buzzfeednews.com",
-      bias: "left"
-    },
-    "The Sun": {
-      url: "thesun.co.uk",
-      bias: "right"
-    },
-    "Fox News": {
-      url: "foxnews.com",
-      bias: "right"
-    },
-    "New York Post": {
-      url: "nypost.com",
-      bias: "right"
-    },
-    "Daily Wire": {
-      url: "dailywire.com",
-      bias: "right"
-    },
-    "Federalist": {
-      url: "thefederalist.com",
-      bias: "right"
-    },
-    "Reason": {
-      url: "reason.com",
-      bias: "right"
-    },
-    "Wall Street Journal": {
-      url: "wsj.com",
-      bias: "right"
-    },
-    "Washington Times": {
-      url: "washingtontimes.com",
-      bias: "right"
-    },
-    "National Review": {
-      url: "nationalreview.com",
-      bias: "right"
-    }
-  };
-  var sources_default = sources;
-
   // src/content/biasEvaluator.js
+  var import_sources = __toESM(require_sources());
   var BiasEvaluator = class {
     constructor() {
       this.countLeft = 0;
+      this.countCenterLeft = 0;
       this.countCenter = 0;
+      this.countCenterRight = 0;
       this.countRight = 0;
     }
     evaluateReferences(referenceGroups) {
@@ -254,8 +92,8 @@
         let isBasicCitation = !/FOOTNOTE/.test(href);
         if (isBasicCitation) {
           const innerHTML = document.getElementById(href)?.childNodes[2]?.innerHTML || "";
-          for (const sourceName in sources_default) {
-            const source = sources_default[sourceName];
+          for (const sourceName in import_sources.default) {
+            const source = import_sources.default[sourceName];
             if (innerHTML.includes(source.url)) {
               const bias = source.bias;
               if (bias === "center" && biasScore == null) {
@@ -265,6 +103,14 @@
               if (bias === "left") {
                 biasScore--;
                 this.countLeft++;
+              }
+              if (bias === "center left") {
+                biasScore -= 0.5;
+                this.countCenterLeft++;
+              }
+              if (bias === "center right") {
+                biasScore += 0.5;
+                this.countCenterRight++;
               }
               if (bias === "right") {
                 biasScore++;

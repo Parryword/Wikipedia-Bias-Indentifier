@@ -4,7 +4,9 @@ import { colorizeCitation } from "./domService.js";
 export class BiasEvaluator {
     constructor() {
         this.countLeft = 0;
+        this.countCenterLeft = 0;
         this.countCenter = 0;
+        this.countCenterRight = 0;
         this.countRight = 0;
     }
 
@@ -38,6 +40,8 @@ export class BiasEvaluator {
                             biasScore = 0; this.countCenter++;
                         }
                         if (bias === "left") { biasScore--; this.countLeft++; }
+                        if (bias === "center left") { biasScore -= 0.5; this.countCenterLeft++; }
+                        if (bias === "center right") { biasScore += 0.5; this.countCenterRight++; }
                         if (bias === "right") { biasScore++; this.countRight++; }
                         break;
                     }
