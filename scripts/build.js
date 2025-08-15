@@ -11,9 +11,9 @@ async function buildFor(browser) {
 
   // Bundle content script
   await esbuild.build({
-    entryPoints: ['src/content/contentscript.js'],
+    entryPoints: ['src/content/contentScript.js'],
     bundle: true,
-    outfile: path.join(distPath, 'contentscript.js'),
+    outfile: path.join(distPath, 'contentScript.js'),
     format: 'iife',
     minify: false,
     sourcemap: true
