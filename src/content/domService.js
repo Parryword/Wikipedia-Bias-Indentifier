@@ -1,5 +1,5 @@
 export function getArticleTitle() {
-    const el = document.getElementsByClassName("mw-page-title-main")[0];
+    const el = document.getElementById("firstHeading").firstChild.textContent;;
     return el ? el.textContent.trim() : "UNDEFINED";
 }
 
