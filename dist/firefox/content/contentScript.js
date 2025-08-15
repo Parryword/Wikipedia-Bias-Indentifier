@@ -35,7 +35,7 @@
   function getArticleTitle() {
     const el = document.getElementById("firstHeading").firstChild.textContent;
     ;
-    return el ? el.textContent.trim() : "UNDEFINED";
+    return el ? el.trim() : "UNDEFINED";
   }
   function getReferences() {
     const collection = document.getElementsByClassName("reference");
