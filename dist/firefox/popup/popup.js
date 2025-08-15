@@ -1,4 +1,6 @@
-let backgroundPage = browser.extension.getBackgroundPage();
+import browserAPI from '../shared/browserAPI.js';
+
+let backgroundPage = browserAPI.extension.getBackgroundPage();
 
 function updateUI() {
     const data = backgroundPage.getData();

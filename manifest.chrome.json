@@ -7,10 +7,10 @@
     "48": "src/icons/image.svg"
   },
   "action": {
-    "default_popup": "src/popup.html"
+    "default_popup": "src/popup/popup.html"
   },
   "background": {
-    "service_worker": "src/background.js"
+    "service_worker": "src/background/background.js"
   },
   "permissions": [
     "tabs",
@@ -19,7 +19,7 @@
   "content_scripts": [
     {
       "matches": ["*://*.wikipedia.org/wiki/*"],
-      "js": ["src/contentScript.js"]
+      "js": ["src/content/contentScript.js"]
     }
   ]
 }
