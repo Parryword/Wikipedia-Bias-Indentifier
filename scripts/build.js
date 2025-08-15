@@ -13,7 +13,7 @@ async function buildFor(browser) {
   await esbuild.build({
     entryPoints: ['src/content/contentScript.js'],
     bundle: true,
-    outfile: path.join(distPath, 'contentScript.js'),
+    outfile: path.join(distPath, 'content/contentScript.js'),
     format: 'iife',
     minify: false,
     sourcemap: true
@@ -23,7 +23,7 @@ async function buildFor(browser) {
   await esbuild.build({
     entryPoints: ['src/background/background.js'],
     bundle: true,
-    outfile: path.join(distPath, 'background.js'),
+    outfile: path.join(distPath, 'background/background.js'),
     format: 'iife',
     minify: false,
     sourcemap: true
@@ -33,7 +33,7 @@ async function buildFor(browser) {
   await esbuild.build({
     entryPoints: ['src/popup/popup.js'],
     bundle: true,
-    outfile: path.join(distPath, 'popup.js'),
+    outfile: path.join(distPath, 'popup/popup.js'),
     format: 'iife',
     minify: false,
     sourcemap: true
