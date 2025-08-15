@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "WikiBias",
+  "version": "0.1",
+
+  "description": "Identify biased sources on Wikipedia.",
+
+  "icons": {
+    "48": "src/icons/image.svg"
+  },
+  "browser_action": {
+    "default_popup": "src/popup.html"
+  },
+  "background": {
+    "scripts": ["src/background.js"]
+  },
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.wikipedia.org/wiki/*"],
+      "js": ["src/contentScript.js"]
+    }
+  ]
+
+}
