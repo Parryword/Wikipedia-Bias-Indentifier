@@ -145,7 +145,7 @@
     browserAPI_default.runtime.onMessage.addListener(callback);
   }
 
-  // src/content/contentscript.js
+  // src/content/contentScript.js
   var articleTitle = getArticleTitle();
   var references = getReferences();
   var evaluator = new BiasEvaluator();
@@ -156,4 +156,4 @@
     sendState(articleTitle, counts);
   });
 })();
-//# sourceMappingURL=contentscript.js.map
+//# sourceMappingURL=contentScript.js.map
